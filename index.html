@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carmen Solimando – Psicologa, Psicoterapeuta, Psicoanalista</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAF7F2;
+    --terracotta: #C4714A;
+    --terracotta-light: #E8C5B0;
+    --terracotta-dark: #8B4A2F;
+    --sage: #7A8C6E;
+    --sage-light: #C8D4BE;
+    --charcoal: #2C2820;
+    --warm-gray: #8A847A;
+    --warm-gray-light: #D4CEC5;
+    --gold: #B8924A;
+    --border: rgba(44,40,32,0.12);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.7; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,247,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.04em; color: var(--charcoal); text-decoration: none; }
+  .nav-logo span { color: var(--terracotta); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.08em; color: var(--warm-gray); text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta { background: var(--terracotta); color: white !important; padding: 8px 20px; border-radius: 40px; font-size: 0.82rem !important; font-weight: 400 !important; letter-spacing: 0.06em !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--terracotta-dark) !important; color: white !important; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 64px; }
+  .hero-content { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5% 6rem 8%; background: var(--cream); }
+  .hero-eyebrow { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.5rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1rem; }
+  .hero-title em { font-style: italic; color: var(--terracotta); }
+  .hero-subtitle { font-size: 1rem; font-weight: 300; color: var(--warm-gray); margin-bottom: 2.5rem; max-width: 420px; line-height: 1.8; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+  .badge { display: inline-block; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; padding: 5px 14px; border-radius: 40px; border: 1px solid var(--border); color: var(--warm-gray); background: var(--warm-white); }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--terracotta); color: white; padding: 14px 32px; border-radius: 40px; font-size: 0.9rem; font-weight: 400; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--charcoal); padding: 14px 32px; border-radius: 40px; font-size: 0.9rem; font-weight: 400; text-decoration: none; letter-spacing: 0.04em; border: 1px solid var(--warm-gray-light); transition: border-color 0.2s, transform 0.15s; }
+  .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-1px); }
+  .hero-visual { position: relative; background: var(--sage-light); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .hero-visual-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.5rem; padding: 4rem 2rem; }
+  .avatar-placeholder { width: 200px; height: 240px; background: var(--sage); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; opacity: 0.35; }
+  .hero-photo-note { font-size: 0.78rem; color: rgba(44,40,32,0.5); text-align: center; font-style: italic; letter-spacing: 0.04em; }
+  .hero-locations { margin-top: 2rem; display: flex; gap: 1rem; }
+  .location-pill { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--warm-gray); }
+  .location-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
+  section { scroll-margin-top: 80px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 5%; }
+  .section-label { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--charcoal); margin-bottom: 1.5rem; }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+  #chi-sono { background: var(--warm-white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+  .about-aside { position: sticky; top: 100px; }
+  .about-aside-card { background: var(--cream); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); margin-bottom: 1.5rem; }
+  .aside-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 0.75rem; }
+  .aside-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--charcoal); line-height: 1.6; }
+  .about-text p { font-size: 1.05rem; font-weight: 300; line-height: 1.9; color: #4A4540; margin-bottom: 1.5rem; }
+  .about-text p:first-child::first-letter { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; float: left; line-height: 0.85; margin-right: 6px; color: var(--terracotta); }
+  #servizi { background: var(--cream); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .service-card { background: var(--warm-white); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; }
+  .service-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(44,40,32,0.08); }
+  .service-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--terracotta-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+  .service-icon svg { width: 20px; height: 20px; stroke: var(--terracotta-dark); fill: none; }
+  .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.75rem; }
+  .service-desc { font-size: 0.9rem; font-weight: 300; color: var(--warm-gray); line-height: 1.8; }
+  #approccio { background: var(--charcoal); }
+  #approccio .section-label { color: var(--terracotta-light); }
+  #approccio .section-title { color: var(--cream); }
+  #approccio .section-title em { color: var(--terracotta-light); }
+  .approach-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+  .approach-text p { font-size: 1.05rem; font-weight: 300; line-height: 1.9; color: rgba(245,240,232,0.75); margin-bottom: 1.5rem; }
+  .approach-quote { border-left: 2px solid var(--terracotta); padding-left: 1.5rem; margin: 2rem 0; }
+  .approach-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem !important; font-weight: 300; font-style: italic; color: var(--cream) !important; line-height: 1.5 !important; }
+  .pillars { display: flex; flex-direction: column; gap: 1.25rem; }
+  .pillar { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(245,240,232,0.05); border-radius: 12px; border: 1px solid rgba(245,240,232,0.1); }
+  .pillar-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem; }
+  .pillar-text h4 { font-size: 0.9rem; font-weight: 400; color: var(--cream); margin-bottom: 0.25rem; letter-spacing: 0.04em; }
+  .pillar-text p { font-size: 0.85rem; font-weight: 300; color: rgba(245,240,232,0.55); line-height: 1.6; margin: 0; }
+  #contatti { background: var(--warm-white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+  .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1.5rem; }
+  .contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.25rem; }
+  .contact-item-icon { width: 36px; height: 36px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-item-icon svg { width: 16px; height: 16px; stroke: var(--terracotta); fill: none; }
+  .contact-item-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 3px; }
+  .contact-item-value { font-size: 0.95rem; color: var(--charcoal); font-weight: 300; }
+  .contact-item-value a { color: var(--terracotta); text-decoration: none; }
+  .social-links { display: flex; gap: 10px; margin-top: 2rem; }
+  .social-btn { display: flex; align-items: center; gap: 7px; padding: 9px 16px; border-radius: 40px; border: 1px solid var(--border); text-decoration: none; font-size: 0.8rem; font-weight: 400; color: var(--charcoal); background: var(--cream); transition: all 0.2s; letter-spacing: 0.03em; }
+  .social-btn:hover { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+  .social-btn svg { width: 15px; height: 15px; }
+  .platform-links { margin-top: 2rem; }
+  .platform-links h4 { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 1rem; }
+  .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .platform-btn { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; font-size: 0.82rem; color: var(--charcoal); background: var(--warm-white); transition: all 0.2s; font-weight: 400; }
+  .platform-btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .platform-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .booking-form { background: var(--cream); border-radius: 20px; padding: 2.5rem; border: 1px solid var(--border); }
+  .booking-form h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.5rem; }
+  .form-intro { font-size: 0.88rem; color: var(--warm-gray); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.7; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+  .form-group label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); font-weight: 400; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--warm-gray-light); border-radius: 10px; background: var(--warm-white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; color: var(--charcoal); outline: none; transition: border-color 0.2s; appearance: none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--terracotta); }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-note { font-size: 0.78rem; color: var(--warm-gray); font-weight: 300; margin-bottom: 1.25rem; font-style: italic; }
+  .form-submit { width: 100%; padding: 14px; background: var(--terracotta); color: white; border: none; border-radius: 40px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 400; letter-spacing: 0.04em; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+  .form-submit:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
+  .sedi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .sede-card { background: var(--cream); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); }
+  .sede-city { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--charcoal); margin-bottom: 0.25rem; }
+  .sede-address { font-size: 0.9rem; font-weight: 300; color: var(--warm-gray); margin-bottom: 1.25rem; }
+  .sede-info { font-size: 0.85rem; font-weight: 300; color: var(--warm-gray); line-height: 1.8; }
+  footer { background: var(--charcoal); padding: 3rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); font-weight: 300; letter-spacing: 0.06em; }
+  .footer-logo span { color: var(--terracotta-light); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+  .footer-links a { font-size: 0.8rem; color: rgba(245,240,232,0.4); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--terracotta-light); }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,240,232,0.3); letter-spacing: 0.04em; }
+  .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; background: #25D366; color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+  .wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
+  .wa-float svg { width: 26px; height: 26px; fill: white; }
+  .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-subtitle { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-badges { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-locations { animation: fadeUp 0.6s 0.5s ease both; }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero-content { padding: 4rem 5%; }
+    .about-grid, .approach-content, .contact-grid, .sedi-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .about-aside { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<a class="wa-float" href="https://wa.me/39INSERIRE_NUMERO" target="_blank" title="Scrivimi su WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav>
+  <a class="nav-logo" href="#home">Carmen <span>Solimando</span></a>
+  <ul class="nav-links">
+    <li><a href="#chi-sono">Chi sono</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#approccio">Approccio</a></li>
+    <li><a href="#contatti">Studio</a></li>
+    <li><a class="nav-cta" href="#contatti">Prenota</a></li>
+  </ul>
+</nav>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Psicologa · Psicoterapeuta · Psicoanalista</p>
+    <h1 class="hero-title">Uno spazio per<br><em>ascoltarti</em>,<br>davvero.</h1>
+    <p class="hero-subtitle">Un percorso terapeutico personalizzato per comprendere te stesso, attraversare le difficoltà e riscoprire il tuo equilibrio interiore.</p>
+    <div class="hero-badges">
+      <span class="badge">Adulti &amp; adolescenti</span>
+      <span class="badge">Sedute individuali</span>
+      <span class="badge">Online disponibile</span>
+      <span class="badge">Prima consulenza</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#contatti">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Prenota una seduta
+      </a>
+      <a class="btn-secondary" href="#chi-sono">Scopri chi sono</a>
+    </div>
+    <div class="hero-locations">
+      <div class="location-pill"><div class="location-dot"></div><span>Torino</span></div>
+      <div class="location-pill"><div class="location-dot"></div><span>Faule (CN)</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <div class="avatar-placeholder"></div>
+      <p class="hero-photo-note">← inserire foto di Carmen</p>
+    </div>
+  </div>
+</section>
+
+<section id="chi-sono">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-aside">
+        <div class="about-aside-card">
+          <div class="aside-label">Formazione</div>
+          <div class="aside-value">Laurea in Psicologia<br>Specializzazione in Psicoterapia Psicoanalitica</div>
+        </div>
+        <div class="about-aside-card">
+          <div class="aside-label">Iscrizione</div>
+          <div class="aside-value">Ordine degli Psicologi del Piemonte<br><span style="font-size:0.85rem;color:var(--warm-gray)">N° — da inserire</span></div>
+        </div>
+        <div class="about-aside-card">
+          <div class="aside-label">Sedi di ricevimento</div>
+          <div class="aside-value">Torino · Faule (CN)<br>Sedute online su richiesta</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Chi sono</p>
+        <h2 class="section-title">Carmen <em>Solimando</em></h2>
+        <p>Sono una psicologa e psicoterapeuta ad orientamento psicoanalitico. Ho scelto questo percorso perché credo profondamente nel valore del dialogo come strumento di trasformazione: le parole, quando trovano uno spazio autentico, hanno il potere di cambiare il modo in cui viviamo noi stessi e il mondo.</p>
+        <p>Lavoro con adulti e adolescenti che attraversano momenti di difficoltà — ansie, lutti, crisi relazionali, blocchi esistenziali, o semplicemente il desiderio di comprendere meglio chi sono. Non esistono problemi "troppo piccoli" o "troppo grandi" per iniziare un percorso.</p>
+        <p>La mia formazione psicoanalitica mi ha insegnato l'importanza di andare oltre i sintomi, per esplorare i significati più profondi che li animano. Ogni storia è unica, e ogni terapia prende forma insieme alla persona che ho davanti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="servizi">
+  <div class="section-inner">
+    <p class="section-label">Cosa offro</p>
+    <h2 class="section-title">I miei <em>servizi</em></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3 class="service-title">Psicoterapia individuale</h3>
+        <p class="service-desc">Un percorso personale per esplorare i tuoi vissuti, comprendere i tuoi schemi emotivi e costruire un rapporto più autentico con te stesso.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3 class="service-title">Consulenza psicologica</h3>
+        <p class="service-desc">Uno o più incontri focalizzati per orientarti in un momento specifico di difficoltà, senza necessariamente intraprendere un percorso lungo.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3 class="service-title">Sedute online</h3>
+        <p class="service-desc">La terapia accessibile ovunque tu sia. Le sedute online offrono la stessa qualità di cura in uno spazio protetto e riservato.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 class="service-title">Prima consulenza</h3>
+        <p class="service-desc">Un incontro conoscitivo per capire insieme se e come posso esserti d'aiuto. Un momento senza impegni, per conoscersi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approccio">
+  <div class="section-inner">
+    <div class="approach-content">
+      <div class="approach-text">
+        <p class="section-label">Come lavoro</p>
+        <h2 class="section-title">L'approccio <em>psicoanalitico</em></h2>
+        <div class="approach-quote">
+          <p>"La cura non avviene nonostante le parole, ma attraverso di esse."</p>
+        </div>
+        <p>L'orientamento psicoanalitico parte dall'ascolto della parola libera — di ciò che si dice, ma anche di ciò che si tace. I sintomi non sono nemici da combattere, ma messaggi che portano senso.</p>
+        <p>Il mio approccio è privo di giudizi. Lo spazio terapeutico è un luogo sicuro, dove il tuo vissuto viene accolto senza essere etichettato o misurato.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-num">01</div><div class="pillar-text"><h4>Ascolto senza giudizio</h4><p>Ogni racconto è accolto con rispetto e curiosità, senza categorie precostituite.</p></div></div>
+        <div class="pillar"><div class="pillar-num">02</div><div class="pillar-text"><h4>Lavoro sulla profondità</h4><p>Andare oltre i sintomi, per comprendere le radici dei tuoi vissuti.</p></div></div>
+        <div class="pillar"><div class="pillar-num">03</div><div class="pillar-text"><h4>Ritmo personale</h4><p>Ogni percorso ha i suoi tempi. Non esistono strade preconfezionate.</p></div></div>
+        <div class="pillar"><div class="pillar-num">04</div><div class="pillar-text"><h4>Riservatezza totale</h4><p>Il segreto professionale è un fondamento, non un optional.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--cream);">
+  <div class="section-inner">
+    <p class="section-label">Dove ricevo</p>
+    <h2 class="section-title">I miei <em>studi</em></h2>
+    <div class="sedi-grid">
+      <div class="sede-card">
+        <div class="sede-city">Torino</div>
+        <div class="sede-address">Via — da inserire, Torino (TO)</div>
+        <div class="sede-info">Giorni: — da inserire<br>Orari: — da inserire</div>
+      </div>
+      <div class="sede-card">
+        <div class="sede-city">Faule</div>
+        <div class="sede-address">Via — da inserire, Faule (CN)</div>
+        <div class="sede-info">Giorni: — da inserire<br>Orari: — da inserire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="section-inner">
+    <p class="section-label">Inizia il tuo percorso</p>
+    <h2 class="section-title">Prenota una <em>seduta</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contatti diretti</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.67 19.79 19.79 0 01.01 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/39INSERIRE_NUMERO">+39 — da inserire</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:carmen@inserire.it">carmen@inserire.it</a></div></div>
+        </div>
+        <div class="social-links">
+          <a class="social-btn" href="https://instagram.com/INSERIRE_HANDLE" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a class="social-btn" href="https://facebook.com/INSERIRE_PAGINA" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook
+          </a>
+        </div>
+        <div class="platform-links">
+          <h4>Prenota anche su</h4>
+          <div class="platform-grid">
+            <a class="platform-btn" href="https://www.miodottore.it" target="_blank"><div class="platform-dot" style="background:#0066CC"></div>MioDottore</a>
+            <a class="platform-btn" href="https://www.serenis.it" target="_blank"><div class="platform-dot" style="background:#4CAF50"></div>Serenis</a>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form">
+        <h3>Richiedi un appuntamento</h3>
+        <p class="form-intro">Compila il modulo e ti rispondo entro 24 ore per fissare un primo incontro conoscitivo.</p>
+        <div class="form-row">
+          <div class="form-group"><label>Nome</label><input type="text" placeholder="Il tuo nome"></div>
+          <div class="form-group"><label>Cognome</label><input type="text" placeholder="Il tuo cognome"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="nome@email.it"></div>
+        <div class="form-group"><label>Telefono</label><input type="tel" placeholder="+39 333 000 0000"></div>
+        <div class="form-group">
+          <label>Preferenza sede</label>
+          <select><option value="">Seleziona...</option><option>Torino</option><option>Faule (CN)</option><option>Online</option></select>
+        </div>
+        <div class="form-group"><label>Messaggio (facoltativo)</label><textarea placeholder="Puoi scrivermi qualcosa sul motivo per cui mi contatti, se lo desideri..."></textarea></div>
+        <p class="form-note">I tuoi dati sono trattati nel rispetto della privacy (D.Lgs. 196/2003 e GDPR 679/2016).</p>
+        <button class="form-submit">Invia richiesta</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Carmen <span>Solimando</span> · Psicologa &amp; Psicoterapeuta</div>
+  <ul class="footer-links">
+    <li><a href="#chi-sono">Chi sono</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Carmen Solimando · Torino &amp; Faule</div>
+</footer>
+
+</body>
+</html>
