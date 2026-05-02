@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carmen Solimando – Psicologa, Psicoterapeuta, Psicoanalista</title>
+<title>Carmen Solimando – Psicologa a Torino e Faule</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -132,7 +132,15 @@
   .wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
   .wa-float svg { width: 26px; height: 26px; fill: white; }
   .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .tariffario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .tariffa-card { background: var(--warm-white); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; }
+  .tariffa-tipo { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); }
+  .tariffa-nome { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); }
+  .tariffa-prezzo { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--terracotta); line-height: 1; }
+  .tariffa-prezzo span { font-size: 1rem; color: var(--warm-gray); font-family: 'DM Sans', sans-serif; font-weight: 300; }
+  .tariffa-note { font-size: 0.85rem; font-weight: 300; color: var(--warm-gray); line-height: 1.7; }
+  .tariffa-divider { height: 1px; background: var(--border); margin: 0.25rem 0; }
+ from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .hero-eyebrow { animation: fadeUp 0.6s ease both; }
   .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
   .hero-subtitle { animation: fadeUp 0.6s 0.2s ease both; }
@@ -162,6 +170,7 @@
     <li><a href="#chi-sono">Chi sono</a></li>
     <li><a href="#servizi">Servizi</a></li>
     <li><a href="#approccio">Approccio</a></li>
+    <li><a href="#tariffario">Tariffe</a></li>
     <li><a href="#contatti">Studio</a></li>
     <li><a class="nav-cta" href="#contatti">Prenota</a></li>
   </ul>
@@ -169,14 +178,14 @@
 
 <section id="home" class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">Psicologa · Psicoterapeuta · Psicoanalista</p>
+    <p class="hero-eyebrow">Psicologa · Specializzanda in Psicoterapia Psicoanalitica</p>
     <h1 class="hero-title">Uno spazio per<br><em>ascoltarti</em>,<br>davvero.</h1>
     <p class="hero-subtitle">Un percorso terapeutico personalizzato per comprendere te stesso, attraversare le difficoltà e riscoprire il tuo equilibrio interiore.</p>
     <div class="hero-badges">
       <span class="badge">Adulti &amp; adolescenti</span>
       <span class="badge">Sedute individuali</span>
       <span class="badge">Online disponibile</span>
-      <span class="badge">Prima consulenza</span>
+      <span class="badge">Su appuntamento</span>
     </div>
     <div class="hero-actions">
       <a class="btn-primary" href="#contatti">
@@ -188,6 +197,7 @@
     <div class="hero-locations">
       <div class="location-pill"><div class="location-dot"></div><span>Torino</span></div>
       <div class="location-pill"><div class="location-dot"></div><span>Faule (CN)</span></div>
+      <div class="location-pill"><div class="location-dot"></div><span>Online</span></div>
     </div>
   </div>
   <div class="hero-visual">
@@ -204,22 +214,30 @@
       <div class="about-aside">
         <div class="about-aside-card">
           <div class="aside-label">Formazione</div>
-          <div class="aside-value">Laurea in Psicologia<br>Specializzazione in Psicoterapia Psicoanalitica</div>
+          <div class="aside-value">Laurea Magistrale in Psicologia Clinica<br><span style="font-size:0.9rem;color:var(--warm-gray)">Università degli Studi di Torino</span></div>
+        </div>
+        <div class="about-aside-card">
+          <div class="aside-label">Specializzazione in corso</div>
+          <div class="aside-value">Psicoterapia Psicoanalitica<br><span style="font-size:0.9rem;color:var(--warm-gray)">IPP – Istituto di Psicoterapia Psicoanalitica, Torino</span></div>
         </div>
         <div class="about-aside-card">
           <div class="aside-label">Iscrizione</div>
-          <div class="aside-value">Ordine degli Psicologi del Piemonte<br><span style="font-size:0.85rem;color:var(--warm-gray)">N° — da inserire</span></div>
+          <div class="aside-value">Ordine degli Psicologi del Piemonte<br><span style="font-size:0.85rem;color:var(--warm-gray)">Albo A · N° 10367</span></div>
+        </div>
+        <div class="about-aside-card">
+          <div class="aside-label">Collaborazioni</div>
+          <div class="aside-value">Psicologa presso <a href="https://www.serenis.it" target="_blank" style="color:var(--terracotta);text-decoration:none;">Serenis</a><br><span style="font-size:0.85rem;color:var(--warm-gray)">Piattaforma di psicologia online</span></div>
         </div>
         <div class="about-aside-card">
           <div class="aside-label">Sedi di ricevimento</div>
-          <div class="aside-value">Torino · Faule (CN)<br>Sedute online su richiesta</div>
+          <div class="aside-value">Torino · Faule (CN) · Online<br>Sedute su appuntamento</div>
         </div>
       </div>
       <div class="about-text">
         <p class="section-label">Chi sono</p>
         <h2 class="section-title">Carmen <em>Solimando</em></h2>
-        <p>Sono una psicologa e psicoterapeuta ad orientamento psicoanalitico. Ho scelto questo percorso perché credo profondamente nel valore del dialogo come strumento di trasformazione: le parole, quando trovano uno spazio autentico, hanno il potere di cambiare il modo in cui viviamo noi stessi e il mondo.</p>
-        <p>Lavoro con adulti e adolescenti che attraversano momenti di difficoltà — ansie, lutti, crisi relazionali, blocchi esistenziali, o semplicemente il desiderio di comprendere meglio chi sono. Non esistono problemi "troppo piccoli" o "troppo grandi" per iniziare un percorso.</p>
+        <p>Sono una psicologa ad orientamento psicoanalitico, attualmente in formazione specialistica in psicoterapia. Ho scelto questo percorso perché credo profondamente nel valore del dialogo come strumento di trasformazione: le parole, quando trovano uno spazio autentico, hanno il potere di cambiare il modo in cui viviamo noi stessi e il mondo.</p>
+        <p>Lavoro con adulti e adolescenti che attraversano momenti di difficoltà — ansie, lutti, crisi relazionali, blocchi esistenziali, gestione delle emozioni, o semplicemente il desiderio di comprendere meglio chi sono. Non esistono problemi "troppo piccoli" o "troppo grandi" per iniziare un percorso.</p>
         <p>La mia formazione psicoanalitica mi ha insegnato l'importanza di andare oltre i sintomi, per esplorare i significati più profondi che li animano. Ogni storia è unica, e ogni terapia prende forma insieme alla persona che ho davanti.</p>
       </div>
     </div>
@@ -248,12 +266,7 @@
         <h3 class="service-title">Sedute online</h3>
         <p class="service-desc">La terapia accessibile ovunque tu sia. Le sedute online offrono la stessa qualità di cura in uno spazio protetto e riservato.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3 class="service-title">Prima consulenza</h3>
-        <p class="service-desc">Un incontro conoscitivo per capire insieme se e come posso esserti d'aiuto. Un momento senza impegni, per conoscersi.</p>
       </div>
-    </div>
   </div>
 </section>
 
@@ -264,7 +277,8 @@
         <p class="section-label">Come lavoro</p>
         <h2 class="section-title">L'approccio <em>psicoanalitico</em></h2>
         <div class="approach-quote">
-          <p>"La cura non avviene nonostante le parole, ma attraverso di esse."</p>
+          <p>"È una gioia essere nascosti, ma un disastro non essere trovati."</p>
+          <span style="font-size:0.8rem;color:rgba(245,240,232,0.45);letter-spacing:0.08em;text-transform:uppercase;font-style:normal;">— Donald Winnicott</span>
         </div>
         <p>L'orientamento psicoanalitico parte dall'ascolto della parola libera — di ciò che si dice, ma anche di ciò che si tace. I sintomi non sono nemici da combattere, ma messaggi che portano senso.</p>
         <p>Il mio approccio è privo di giudizi. Lo spazio terapeutico è un luogo sicuro, dove il tuo vissuto viene accolto senza essere etichettato o misurato.</p>
@@ -286,13 +300,35 @@
     <div class="sedi-grid">
       <div class="sede-card">
         <div class="sede-city">Torino</div>
-        <div class="sede-address">Via — da inserire, Torino (TO)</div>
-        <div class="sede-info">Giorni: — da inserire<br>Orari: — da inserire</div>
+        <div class="sede-address">Corso Francia 33 — Torino (TO)</div>
+        <div class="sede-info">Sedute su appuntamento</div>
       </div>
       <div class="sede-card">
         <div class="sede-city">Faule</div>
-        <div class="sede-address">Via — da inserire, Faule (CN)</div>
-        <div class="sede-info">Giorni: — da inserire<br>Orari: — da inserire</div>
+        <div class="sede-address">Via Casana 44 — Faule (CN)</div>
+        <div class="sede-info">Sedute su appuntamento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tariffario" style="background: var(--warm-white);">
+  <div class="section-inner">
+    <p class="section-label">Trasparenza</p>
+    <h2 class="section-title">Tarif<em>fario</em></h2>
+    <div class="tariffario-grid">
+      <div class="tariffa-card">
+        <div class="tariffa-tipo">Seduta individuale</div>
+        <div class="tariffa-nome">Colloquio psicologico</div>
+        <div class="tariffa-divider"></div>
+        <div class="tariffa-prezzo">€ 50 <span>/ seduta</span></div>
+        <div class="tariffa-note">Seduta della durata di circa 50 minuti, in studio a Torino o Faule oppure online.</div>
+      </div>
+      <div class="tariffa-card">
+        <div class="tariffa-tipo">Informazioni utili</div>
+        <div class="tariffa-nome">Pagamento e deducibilità</div>
+        <div class="tariffa-divider"></div>
+        <div class="tariffa-note">Le sedute psicologiche sono detraibili fiscalmente al 19% nella dichiarazione dei redditi (spese sanitarie).</div>
       </div>
     </div>
   </div>
@@ -307,11 +343,11 @@
         <h3>Contatti diretti</h3>
         <div class="contact-item">
           <div class="contact-item-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.67 19.79 19.79 0 01.01 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/39INSERIRE_NUMERO">+39 — da inserire</a></div></div>
+          <div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/39INSERIRE_NUMERO">+39 — 3206660643</a></div></div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:carmen@inserire.it">carmen@inserire.it</a></div></div>
+          <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:carmen.solimando@gmail.com">carmen.solimando@gmail.com</a></div></div>
         </div>
         <div class="social-links">
           <a class="social-btn" href="https://instagram.com/INSERIRE_HANDLE" target="_blank">
@@ -322,13 +358,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             Facebook
           </a>
-        </div>
-        <div class="platform-links">
-          <h4>Prenota anche su</h4>
-          <div class="platform-grid">
-            <a class="platform-btn" href="https://www.miodottore.it" target="_blank"><div class="platform-dot" style="background:#0066CC"></div>MioDottore</a>
-            <a class="platform-btn" href="https://www.serenis.it" target="_blank"><div class="platform-dot" style="background:#4CAF50"></div>Serenis</a>
-          </div>
         </div>
       </div>
       <div class="booking-form">
@@ -353,10 +382,11 @@
 </section>
 
 <footer>
-  <div class="footer-logo">Carmen <span>Solimando</span> · Psicologa &amp; Psicoterapeuta</div>
+  <div class="footer-logo">Carmen <span>Solimando</span> · Psicologa</div>
   <ul class="footer-links">
     <li><a href="#chi-sono">Chi sono</a></li>
     <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#tariffario">Tariffe</a></li>
     <li><a href="#contatti">Contatti</a></li>
     <li><a href="#">Privacy Policy</a></li>
   </ul>
