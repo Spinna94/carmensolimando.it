@@ -363,19 +363,21 @@
       <div class="booking-form">
         <h3>Richiedi un appuntamento</h3>
         <p class="form-intro">Compila il modulo e ti rispondo entro 24 ore per fissare un primo incontro conoscitivo.</p>
+        <form action="https://formspree.io/f/mlgzgraa" method="POST">
         <div class="form-row">
-          <div class="form-group"><label>Nome</label><input type="text" placeholder="Il tuo nome"></div>
-          <div class="form-group"><label>Cognome</label><input type="text" placeholder="Il tuo cognome"></div>
+          <div class="form-group"><label>Nome</label><input type="text" name="nome" placeholder="Il tuo nome" required></div>
+          <div class="form-group"><label>Cognome</label><input type="text" name="cognome" placeholder="Il tuo cognome" required></div>
         </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="nome@email.it"></div>
-        <div class="form-group"><label>Telefono</label><input type="tel" placeholder="+39 333 000 0000"></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="nome@email.it" required></div>
+        <div class="form-group"><label>Telefono</label><input type="tel" name="telefono" placeholder="+39 333 000 0000"></div>
         <div class="form-group">
           <label>Preferenza sede</label>
-          <select><option value="">Seleziona...</option><option>Torino</option><option>Faule (CN)</option><option>Online</option></select>
+          <select name="sede"><option value="">Seleziona...</option><option>Torino</option><option>Faule (CN)</option><option>Online</option></select>
         </div>
-        <div class="form-group"><label>Messaggio (facoltativo)</label><textarea placeholder="Puoi scrivermi qualcosa sul motivo per cui mi contatti, se lo desideri..."></textarea></div>
+        <div class="form-group"><label>Messaggio (facoltativo)</label><textarea name="messaggio" placeholder="Puoi scrivermi qualcosa sul motivo per cui mi contatti, se lo desideri..."></textarea></div>
         <p class="form-note">I tuoi dati sono trattati nel rispetto della privacy (D.Lgs. 196/2003 e GDPR 679/2016).</p>
-        <button class="form-submit">Invia richiesta</button>
+        <button type="submit" class="form-submit">Invia richiesta</button>
+        </form>
       </div>
     </div>
   </div>
