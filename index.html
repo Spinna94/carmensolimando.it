@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carmen Solimando – Psicologa a Torino e Faule</title>
+<meta name="google-site-verification" content="8ZlLDU9CeCa06jVFERu86KnVgi8D2f9TmWCO2n3fVwA" />
+<meta name="description" content="Carmen Solimando, psicologa a Torino e Faule. Specializzanda in psicoterapia psicoanalitica, offre colloqui psicologici individuali in studio e online. Albo Psicologi Piemonte A/10367.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://carmensolimando-psicologa.it/">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,7 +38,7 @@
   .nav-links a:hover { color: var(--terracotta); }
   .nav-cta { background: var(--terracotta); color: white !important; padding: 8px 20px; border-radius: 40px; font-size: 0.82rem !important; font-weight: 400 !important; letter-spacing: 0.06em !important; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--terracotta-dark) !important; color: white !important; }
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 64px; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr; padding-top: 64px; }
   .hero-content { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5% 6rem 8%; background: var(--cream); }
   .hero-eyebrow { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.5rem; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1rem; }
@@ -44,11 +51,6 @@
   .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
   .btn-secondary { background: transparent; color: var(--charcoal); padding: 14px 32px; border-radius: 40px; font-size: 0.9rem; font-weight: 400; text-decoration: none; letter-spacing: 0.04em; border: 1px solid var(--warm-gray-light); transition: border-color 0.2s, transform 0.15s; }
   .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-1px); }
-  .hero-visual { position: relative; background: var(--sage-light); overflow: hidden; display: flex; align-items: center; justify-content: center; max-width: 480px; }
-  .hero-visual-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.5rem; padding: 4rem 2rem; }
-  .hero-photo { width: 240px; height: 300px; object-fit: cover; object-position: center top; border-radius: 50% 50% 48% 52% / 55% 55% 45% 45%; box-shadow: 0 20px 60px rgba(44,40,32,0.2); border: 4px solid rgba(245,240,232,0.6); }  
-  .avatar-placeholder { width: 200px; height: 240px; background: var(--sage); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; opacity: 0.35; }
-  .hero-photo-note { font-size: 0.78rem; color: rgba(44,40,32,0.5); text-align: center; font-style: italic; letter-spacing: 0.04em; }
   .hero-locations { margin-top: 2rem; display: flex; gap: 1rem; }
   .location-pill { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--warm-gray); }
   .location-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
@@ -63,6 +65,7 @@
   .about-aside-card { background: var(--cream); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); margin-bottom: 1.5rem; }
   .aside-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 0.75rem; }
   .aside-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--charcoal); line-height: 1.6; }
+  .about-photo { width: 180px; height: 180px; object-fit: cover; object-position: center top; border-radius: 50%; box-shadow: 0 8px 30px rgba(44,40,32,0.15); float: right; margin: 0 0 1.5rem 2rem; }
   .about-text p { font-size: 1.05rem; font-weight: 300; line-height: 1.9; color: #4A4540; margin-bottom: 1.5rem; }
   .about-text p:first-child::first-letter { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; float: left; line-height: 0.85; margin-right: 6px; color: var(--terracotta); }
   #servizi { background: var(--cream); }
@@ -151,9 +154,8 @@
   .hero-actions { animation: fadeUp 0.6s 0.4s ease both; }
   .hero-locations { animation: fadeUp 0.6s 0.5s ease both; }
   @media (max-width: 768px) {
+    .about-photo { float: none; display: block; margin: 0 auto 1.5rem auto; }
     .hero { grid-template-columns: 1fr; }
-    .hero-visual { min-height: 260px; height: 260px; }
-    .hero-photo { width: 160px; height: 200px; object-fit: cover; object-position: center top; }
     .hero-content { padding: 4rem 5%; }
     .about-grid, .approach-content, .contact-grid, .sedi-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
@@ -204,11 +206,6 @@
       <div class="location-pill"><div class="location-dot"></div><span>Online</span></div>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-visual-inner">
-      <img src="foto-carmen.jpg" alt="Carmen Solimando, Psicologa" class="hero-photo">
-    </div>
-  </div>
 </section>
  
 <section id="chi-sono">
@@ -239,6 +236,7 @@
       <div class="about-text">
         <p class="section-label">Chi sono</p>
         <h2 class="section-title">Carmen <em>Solimando</em></h2>
+        <img src="foto-carmen.jpg" alt="Carmen Solimando" class="about-photo">
         <p>Sono una psicologa ad orientamento psicoanalitico, attualmente in formazione specialistica in psicoterapia. Ho scelto questo percorso perché credo profondamente nel valore del dialogo come strumento di trasformazione: le parole, quando trovano uno spazio autentico, hanno il potere di cambiare il modo in cui viviamo noi stessi e il mondo.</p>
         <p>Lavoro con adulti e adolescenti che attraversano momenti di difficoltà — ansie, lutti, crisi relazionali, blocchi esistenziali, gestione delle emozioni, o semplicemente il desiderio di comprendere meglio chi sono. Non esistono problemi "troppo piccoli" o "troppo grandi" per iniziare un percorso.</p>
         <p>La mia formazione psicoanalitica mi ha insegnato l'importanza di andare oltre i sintomi, per esplorare i significati più profondi che li animano. Ogni storia è unica, e ogni terapia prende forma insieme alla persona che ho davanti.</p>
