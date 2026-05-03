@@ -46,6 +46,7 @@
   .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-1px); }
   .hero-visual { position: relative; background: var(--sage-light); overflow: hidden; display: flex; align-items: center; justify-content: center; max-width: 480px; }
   .hero-visual-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.5rem; padding: 4rem 2rem; }
+  .hero-photo { width: 240px; height: 300px; object-fit: cover; object-position: center top; border-radius: 50% 50% 48% 52% / 55% 55% 45% 45%; box-shadow: 0 20px 60px rgba(44,40,32,0.2); border: 4px solid rgba(245,240,232,0.6); }  
   .avatar-placeholder { width: 200px; height: 240px; background: var(--sage); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; opacity: 0.35; }
   .hero-photo-note { font-size: 0.78rem; color: rgba(44,40,32,0.5); text-align: center; font-style: italic; letter-spacing: 0.04em; }
   .hero-locations { margin-top: 2rem; display: flex; gap: 1rem; }
@@ -72,7 +73,9 @@
   .service-icon svg { width: 20px; height: 20px; stroke: var(--terracotta-dark); fill: none; }
   .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.75rem; }
   .service-desc { font-size: 0.9rem; font-weight: 300; color: var(--warm-gray); line-height: 1.8; }
-  #approccio { background: var(--charcoal); }
+  #approccio { background: var(--charcoal); position: relative; overflow: hidden; }
+  #approccio::before { content: ""; position: absolute; inset: 0; background-image: url("foto-foresta.jpg"); background-size: cover; background-position: center; opacity: 0.18; z-index: 0; }
+  #approccio .section-inner { position: relative; z-index: 1; }
   #approccio .section-label { color: var(--terracotta-light); }
   #approccio .section-title { color: var(--cream); }
   #approccio .section-title em { color: var(--terracotta-light); }
@@ -140,7 +143,7 @@
   .tariffa-prezzo span { font-size: 1rem; color: var(--warm-gray); font-family: 'DM Sans', sans-serif; font-weight: 300; }
   .tariffa-note { font-size: 0.85rem; font-weight: 300; color: var(--warm-gray); line-height: 1.7; }
   .tariffa-divider { height: 1px; background: var(--border); margin: 0.25rem 0; }
- from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+ @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .hero-eyebrow { animation: fadeUp 0.6s ease both; }
   .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
   .hero-subtitle { animation: fadeUp 0.6s 0.2s ease both; }
@@ -150,7 +153,7 @@
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; }
     .hero-visual { min-height: 260px; height: 260px; }
-    .hero-photo { width: 180px; height: 220px; }
+    .hero-photo { width: 160px; height: 200px; object-fit: cover; object-position: center top; }
     .hero-content { padding: 4rem 5%; }
     .about-grid, .approach-content, .contact-grid, .sedi-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
@@ -343,7 +346,7 @@
         <h3>Contatti diretti</h3>
         <div class="contact-item">
           <div class="contact-item-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.67 19.79 19.79 0 01.01 1a2 2 0 012-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/39INSERIRE_NUMERO">+39 — 3206660643</a></div></div>
+          <div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/393206660643">+39 — 3206660643</a></div></div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -362,7 +365,7 @@
       </div>
       <div class="booking-form">
         <h3>Richiedi un appuntamento</h3>
-        <p class="form-intro">Compila il modulo e ti rispondo entro 24 ore per fissare un primo incontro conoscitivo.</p>
+        <p class="form-intro">Per informazioni o per prendere un appuntamento compila il modulo.</p>
         <form action="https://formspree.io/f/mlgzgraa" method="POST">
         <div class="form-row">
           <div class="form-group"><label>Nome</label><input type="text" name="nome" placeholder="Il tuo nome" required></div>
