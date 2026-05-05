@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://carmensolimando-psicologa.it/sitemap.xml
