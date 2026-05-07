@@ -71,7 +71,9 @@
   .about-aside-card { background: var(--cream); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); margin-bottom: 1.5rem; }
   .aside-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 0.75rem; }
   .aside-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--charcoal); line-height: 1.6; }
-  .about-photo { width: 180px; height: 180px; object-fit: cover; object-position: center top; border-radius: 50%; box-shadow: 0 8px 30px rgba(44,40,32,0.15); float: right; margin: 0 0 1.5rem 2rem; }
+  .about-text-body { display: flex; gap: 2.5rem; align-items: center; }
+  .about-paragraphs { flex: 1; }
+  .about-photo { flex-shrink: 0; width: 180px; height: 180px; object-fit: cover; object-position: center top; border-radius: 50%; box-shadow: 0 8px 30px rgba(44,40,32,0.15); }
   .about-text p { font-size: 1.05rem; font-weight: 300; line-height: 1.9; color: #4A4540; margin-bottom: 1.5rem; }
   .about-text p:first-child::first-letter { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; float: left; line-height: 0.85; margin-right: 6px; color: var(--terracotta); }
   #servizi { background: var(--cream); }
@@ -160,7 +162,8 @@
   .hero-actions { animation: fadeUp 0.6s 0.4s ease both; }
   .hero-locations { animation: fadeUp 0.6s 0.5s ease both; }
   @media (max-width: 768px) {
-    .about-photo { float: none; display: block; margin: 0 auto 1.5rem auto; }
+    .about-text-body { flex-direction: column; align-items: center; }
+    .about-photo { margin: 0 auto 1.5rem auto; }
     .hero { grid-template-columns: 1fr; }
     .hero-content { padding: 4rem 5%; }
     .about-grid, .approach-content, .contact-grid, .sedi-grid { grid-template-columns: 1fr; }
@@ -242,10 +245,14 @@
       <div class="about-text">
         <p class="section-label">Chi sono</p>
         <h2 class="section-title">Carmen <em>Solimando</em></h2>
-        <img src="foto-carmen.jpg" alt="Carmen Solimando" class="about-photo">
-        <p>Sono una psicologa ad orientamento psicoanalitico, attualmente in formazione specialistica in psicoterapia. Ho scelto questo percorso perché credo profondamente nel valore del dialogo come strumento di trasformazione: le parole, quando trovano uno spazio autentico, hanno il potere di cambiare il modo in cui viviamo noi stessi e il mondo.</p>
-        <p>Lavoro con adulti e adolescenti che attraversano momenti di difficoltà — ansie, lutti, crisi relazionali, blocchi esistenziali, gestione delle emozioni, o semplicemente il desiderio di comprendere meglio chi sono. Non esistono problemi "troppo piccoli" o "troppo grandi" per iniziare un percorso.</p>
-        <p>La mia formazione psicoanalitica mi ha insegnato l'importanza di andare oltre i sintomi, per esplorare i significati più profondi che li animano. Ogni storia è unica, e ogni terapia prende forma insieme alla persona che ho davanti.</p>
+        <div class="about-text-body">
+          <div class="about-paragraphs">
+            <p>Sono una psicologa ad orientamento psicoanalitico, attualmente in formazione specialistica in psicoterapia. Ho scelto questo percorso perché credo profondamente nel valore del dialogo come strumento di trasformazione: le parole, quando trovano uno spazio autentico, hanno il potere di cambiare il modo in cui viviamo noi stessi e il mondo.</p>
+            <p>Lavoro con adulti e adolescenti che attraversano momenti di difficoltà — ansie, lutti, crisi relazionali, blocchi esistenziali, gestione delle emozioni, o semplicemente il desiderio di comprendere meglio chi sono. Non esistono problemi "troppo piccoli" o "troppo grandi" per iniziare un percorso.</p>
+            <p>La mia formazione psicoanalitica mi ha insegnato l'importanza di andare oltre i sintomi, per esplorare i significati più profondi che li animano. Ogni storia è unica, e ogni terapia prende forma insieme alla persona che ho davanti.</p>
+          </div>
+          <img src="foto-carmen.jpg" alt="Carmen Solimando" class="about-photo">
+        </div>
       </div>
     </div>
   </div>
